@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivación del Día</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1 id="greeting"></h1>
+  </header>
+
+  <main class="principal">
+    <div class="container">
+        
+        
+      <main>
+          <h1>Frase del Dia</h1>
+          <button id="save-favorite" class="favorite-btn">🤍</button>
+          <div class="card" id="motivation-card">
+            
+            <p id="motivation-text"></p>
+          </div>
+          <div class="buttons">
+            <button id="share-btn" class="btn">Compartir</button>
+            <button id="generate-text" class="btn">Genera otra Frase</button>
+            <button id="show-favorites" class="btn">📖 Ver favoritas</button>
+            <button id="open-calendar" class="btn">📅 Ver por día</button>
+          </div>
+          
+      </main>
+
+        
+      
+    </div>
+
+    <div id="favorites-list" class="hidden"></div>
+    
+    <div id="calendar-modal" class="hidden">
+      <h3>Selecciona un día del mes</h3>
+      <div id="calendar-days"></div>
+      <div id="day-message"></div>
+      <button id="close-calendar">Cerrar</button>
+    </div>
+  </main>  
+  
+    
+    <script src="script.js"></script>
+</body>
+</html>
