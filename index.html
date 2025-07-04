@@ -11,6 +11,21 @@
     <h1 id="greeting"></h1>
   </header>
 
+  <div id="mood-section" class="hidden">
+    <h3>¿Cómo te sientes hoy?</h3>
+    <select id="mood-select">
+      <option value="">-- Selecciona un estado --</option>
+      <option value="feliz">😊 Feliz</option>
+      <option value="triste">😢 Triste</option>
+      <option value="estresado">😣 Estresado</option>
+      <option value="motivado">💪 Motivado</option>
+      <option value="ansioso">😰 Ansioso</option>
+    </select>
+    <div class="buttons">
+      <button id="generate-mood-phrase" class="btn">🔄 Nueva frase según tu estado</button>
+    </div>
+  </div>
+
   <main class="principal">
     <div class="container">
         
@@ -43,6 +58,7 @@
       <div id="day-message"></div>
       <button id="close-calendar">Cerrar</button>
     </div>
+
   </main>  
   
     

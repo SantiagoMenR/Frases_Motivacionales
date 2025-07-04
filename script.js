@@ -194,3 +194,64 @@ document.getElementById("open-calendar").addEventListener("click", () => {
 document.getElementById("close-calendar").addEventListener("click", () => {
   document.getElementById("calendar-modal").classList.add("hidden");
 });
+
+
+const frasesPorEstado = {
+  feliz: [
+    "Disfruta cada momento, tu sonrisa es poderosa.",
+    "Hoy es un gran día para seguir brillando.",
+    "Tu felicidad contagia al mundo."
+  ],
+  triste: [
+    "Está bien no estar bien. Mañana será otro día.",
+    "Respira, suelta y deja que pase.",
+    "A veces llorar también es avanzar."
+  ],
+  estresado: [
+    "Haz una pausa. Tú mereces descansar.",
+    "No tienes que hacerlo todo hoy.",
+    "Respira profundo y vuelve con calma."
+  ],
+  motivado: [
+    "¡Sigue así! Estás en el camino correcto.",
+    "Hoy es tu oportunidad para avanzar.",
+    "Nada puede detenerte cuando crees en ti."
+  ],
+  ansioso: [
+    "En este momento, estás a salvo. Respira.",
+    "No todo lo que imaginas pasará. Tranquilo.",
+    "Un paso a la vez, sin presionarte tanto."
+  ]
+};
+
+
+// Generar frase según estado
+document.getElementById("generate-mood-phrase").addEventListener("click", () => {
+  const estado = document.getElementById("mood-select").value;
+  const textEl = document.getElementById("motivation-text");
+
+  if (!estado || !frasesPorEstado[estado]) {
+    alert("Selecciona un estado válido para mostrar una frase.");
+    return;
+  }
+
+  const frases = frasesPorEstado[estado];
+  const index = Math.floor(Math.random() * frases.length);
+  textEl.innerText = frases[index];
+
+  // Aplicar animación
+  textEl.classList.remove("animate");
+  void textEl.offsetWidth;
+  textEl.classList.add("animate");
+
+  actualizarCorazon(); // Para actualizar el ícono del corazón si aplica
+});
+
+// Mostrar u ocultar la sección
+document.getElementById("toggle-mood-section").addEventListener("click", () => {
+  document.getElementById("mood-section").classList.toggle("hidden");
+});
+
+document.getElementById("close-mood-section").addEventListener("click", () => {
+  document.getElementById("mood-section").classList.add("hidden");
+});
