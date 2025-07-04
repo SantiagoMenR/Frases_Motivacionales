@@ -85,7 +85,16 @@ const messages = [
       nuevaFrase = messages[index];
     }while(nuevaFrase === fraseActual);
 
+    const textEl = document.getElementById("motivation-text");
+    textEl.innerText = nuevaFrase;
+
+    // 👇 Reiniciar animación
+    textEl.classList.remove("animate");
+    void textEl.offsetWidth; // Forzar reflow
+    textEl.classList.add("animate");
+
     document.getElementById("motivation-text").innerText = nuevaFrase;
+    
     actualizarCorazon(); 
   })
     
@@ -105,6 +114,11 @@ document.getElementById("save-favorite").addEventListener("click", () => {
 
   localStorage.setItem("frasesFavoritas", JSON.stringify(favoritas));
   actualizarCorazon();
+
+  const btn = document.getElementById("save-favorite");
+  btn.classList.remove("animated"); // Reinicia si ya la tenía
+  void btn.offsetWidth; // Forzar reflow para reiniciar animación
+  btn.classList.add("animated");
 
   const lista = document.getElementById("favorites-list");
   if (!lista.classList.contains("hidden")) {
